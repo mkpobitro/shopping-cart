@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+
+
+         <div class="row user-info" id="user-info">
+            <div class="col-md-12 text-center">
+               <h1>Registration Form</h1>
+               <hr><br>
+
+            </div>
+            <div class="col-md-2">Username</div>
+            <div class="col-md-10">
+               <input type="text" name="" id="user-name" class="form-control" required><br>
+            </div>
+
+            <div class="col-md-2">Password</div>
+            <div class="col-md-10">
+               <input type="password" id="user-address" class="form-control"><br>
+            </div>
+
+            <div class="col-md-12">
+               <button class="btn btn-info float-right" id="user-info-btn" required>Proceed</button>
+            </div>
+
+
+         </div>
+
+         <div class="cart" id="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default decrement-quantity-btn"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center quantity" value="1" id="quantity1">
+                           <button class="btn btn-default increment-quantity-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$<span class="price">1219<span></span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default decrement-quantity-btn"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center quantity" value="1" id="quantity2">
+                           <button class="btn btn-default increment-quantity-btn"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$<span class="price">59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax (10% of subtotal):</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="subtotal">1,278</span></h5>
+                        <h5>$<span id="tax">128</span></h5>
+                        <h5>$<span id="total">1,308</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out" id="checkout-btn">Check Out</button>
+               </div>
+            </div>
+         </div>
+
+         <!-- invoice -->
+         <div class="invoice" id="invoice">
+
+            <div class="row">
+               <div class="col-md-12 text-center">
+                  <h5>Invoice No: <span id="invoiceNo"></span></h5>
+                  <hr>
+               </div>
+               <div class="col-md-12">
+                  <div class="col-md-2">User Name:</div>
+                  <div class="col-md-10">
+                     <p> <span id="invoice-user"></span></p><br>
+                  </div>
+
+                  <div class="col-md-2">Address</div>
+                  <div class="col-md-10">
+                     <p> <span id="invoice-user-address"></span></p><br>
+                  </div>
+
+                  <div class="col-md-12">
+                     <table class="table table-dark">
+                        <thead>
+                           <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Product</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Price (single)</th>
+                              <th scope="col">Price (total)</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th scope="row">1</th>
+                              <td>iPhone 11 128GB Black</td>
+                              <td><span class="product-quantity"></span></td>
+                              <td><span class="single-product-price"></span></td>
+                              <td><span class="total-product-price"></span></td>
+                           </tr>
+                           <tr>
+                              <th scope="row">1</th>
+                              <td>iPhone 11 Silicone Case - Black</td>
+                              <td><span class="product-quantity"></span></td>
+                              <td><span class="single-product-price"></span></td>
+                              <td><span class="total-product-price"></span></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+
+               </div>
+
+               <div class="col-md-12 totalDiv">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <h5>Subtotal:</h5>
+                     </div>
+                     <div class="col-md-8">
+                        <h5>$<span id="invoice-subtotal">20</span></h5>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <h5>Tax (10% of subtotal):</h5>
+                     </div>
+                     <div class="col-md-8">
+                        <h5>$<span id="invoice-tax">20</span></h5>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <h5>Grand Total:</h5>
+                     </div>
+                     <div class="col-md-8">
+                        <h5>$<span id="invoice-total">260</span></h5>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-md-12">
+                  <button class="btn btn-info float-right" id="finish-order-btn">Finish Order</button>
+               </div>
+            </div>
+
+
+         </div>
+      </div>
+   </section>
+
+   <!-- Scripts -->
+   <script src="custom.js"></script>
+</body>
+
+</html>
